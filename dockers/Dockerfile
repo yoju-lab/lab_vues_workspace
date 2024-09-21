@@ -4,17 +4,16 @@ FROM node:18
 # Working directory
 WORKDIR /apps
 
+RUN git clone -b main https://github.com/yoju-lab/study_vues
+
 # Copy package.json and package-lock.json
-COPY package*.json ./
+# COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+# RUN npm init
 
 # Copy the rest of the application code
-COPY . .
-
-# Expose the port the app runs on
-# EXPOSE 5173
+# COPY . .
 
 # Command to run the app
-CMD ["npm", "run", "dev"]
+# CMD ["npm", "run", "dev"]
