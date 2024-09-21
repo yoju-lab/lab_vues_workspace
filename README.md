@@ -9,4 +9,5 @@
 |--|--|--|
 | [CDN 이용 Vue 구현](./basicWithCDN/)| Vue instance, computed, methods, watch | v-model, watch with deep |
 | CDN 이용 Components 구현 | [global](./basicWithCDN/04_global_components.html), [local](./basicWithCDN/05_local_components.html) |  |
+| CDN 이용 Components data 전달 구현 | [props](./basicWithCDN/06_data_between_components_props.html), [events]() | v-bind |
 

@@ -10,8 +10,10 @@
     <div id="app">
         <div>
             <button type="button">root button</button>
-            <globel-component></globel-component>
-            <my-local-component></my-local-component>  <!-- my-local-component를 mount -->
+            <globel-child-component v-bind:propsroot="message"></globel-child-component>
+            <my-local-component>
+                <globel-child-component></globel-child-component>
+            </my-local-component>  <!-- my-local-component를 mount -->
         </div>
     </div>
 </body>
@@ -41,17 +43,19 @@
         },
     });
 
-    app.component(`globel-component`, {
+    app.component(`globel-child-component`, {
         data() {
             return {
-                globel_message : `Hello, Global Component!`,
-            };
+            }
         },
         computed: {},
         methods : {},
+        props : {
+            propsroot: String,     // error name case : propsroot, props-data
+        },
         template: `
             <div>
-                <h2>globel data message : {{ globel_message }}</h2>
+                <h2>Data from Root Component : [{{ propsroot }}]</h2>
             </div>`,
     });
 
